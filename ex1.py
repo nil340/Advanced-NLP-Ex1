@@ -5,7 +5,9 @@ from datasets import load_dataset
 import click
 from evaluate import load
 from transformers import DataCollatorWithPadding
+import os
 
+os.environ["WANDB_MODE"] = "disabled"
 
 def init_tokenizer():
     tokenizer = AutoTokenizer.from_pretrained('bert-base-uncased')
